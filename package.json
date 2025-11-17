@@ -1,9 +1,8 @@
 {
-  "name": "@jafps/plugin-template",
+  "name": "@jafps/password",
   "version": "1.0.0",
-  "description": "",
+  "description": "Functions for hashing and verifying password.",
   "type": "module",
-  "private": true,
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
@@ -14,12 +13,12 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jafpsjs/plugin-template.git"
+    "url": "git+https://github.com/jafpsjs/password.git"
   },
   "bugs": {
-    "url": "https://github.com/jafpsjs/plugin-template/issues"
+    "url": "https://github.com/jafpsjs/password/issues"
   },
-  "homepage": "https://github.com/jafpsjs/plugin-template#readme",
+  "homepage": "https://github.com/jafpsjs/password#readme",
   "imports": {},
   "exports": {
     ".": {
@@ -27,8 +26,7 @@
     }
   },
   "keywords": [
-    "fastify",
-    "fastify-plugin"
+    "fastify"
   ],
   "files": [
     "dist/**/*",
@@ -37,6 +35,7 @@
   "devDependencies": {
     "@joshuaavalon/eslint-config-typescript": "^10.0.0",
     "@types/node": "^24.9.1",
+    "@types/sodium-native": "^2.3.9",
     "eslint": "^9.38.0",
     "fastify": "^5.6.1",
     "globals": "^16.4.0",
@@ -44,6 +43,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "fastify-plugin": "^5.1.0"
+    "sodium-native": "^4.3.3"
   }
 }

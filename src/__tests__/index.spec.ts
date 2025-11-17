@@ -1,16 +1,76 @@
 import assert from "node:assert/strict";
+import { randomUUID } from "node:crypto";
 import { describe, it } from "node:test";
-import fastify from "fastify";
-import plugin from "../index.js";
+import { hashPassword, verifyPassword } from "../index.js";
 
-describe("@jafps/plugin-template", () => {
-  describe("hello", () => {
-    it("should return value", async () => {
-      const value = "world";
-      const app = await fastify();
-      await app.register(plugin, { value });
-      const result = app.hello();
-      assert.equal(result, value);
-    });
+describe("PasswordService", () => {
+  it("should hash and verify correct password (default)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password);
+    const verifiedResult = await verifyPassword(hash, password);
+    assert.equal(verifiedResult, true);
+  });
+
+  it("should hash and verify incorrect password  (default)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password);
+    const verifiedResult = await verifyPassword(hash, `${password}1`);
+    assert.equal(verifiedResult, false);
+  });
+
+  it("should hash and verify correct password (interactive)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "interactive" });
+    const verifiedResult = await verifyPassword(hash, password);
+    assert.equal(verifiedResult, true);
+  });
+
+  it("should hash and verify incorrect password  (interactive)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "interactive" });
+    const verifiedResult = await verifyPassword(hash, `${password}1`);
+    assert.equal(verifiedResult, false);
+  });
+
+  it("should hash and verify correct password (min)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "min" });
+    const verifiedResult = await verifyPassword(hash, password);
+    assert.equal(verifiedResult, true);
+  });
+
+  it("should hash and verify incorrect password  (min)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "min" });
+    const verifiedResult = await verifyPassword(hash, `${password}1`);
+    assert.equal(verifiedResult, false);
+  });
+
+  it("should hash and verify correct password (moderate)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "moderate" });
+    const verifiedResult = await verifyPassword(hash, password);
+    assert.equal(verifiedResult, true);
+  });
+
+  it("should hash and verify incorrect password  (moderate)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "moderate" });
+    const verifiedResult = await verifyPassword(hash, `${password}1`);
+    assert.equal(verifiedResult, false);
+  });
+
+  it("should hash and verify correct password (sensitive)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "sensitive" });
+    const verifiedResult = await verifyPassword(hash, password);
+    assert.equal(verifiedResult, true);
+  });
+
+  it("should hash and verify incorrect password  (sensitive)", async () => {
+    const password = randomUUID();
+    const hash = await hashPassword(password, { limit: "sensitive" });
+    const verifiedResult = await verifyPassword(hash, `${password}1`);
+    assert.equal(verifiedResult, false);
   });
 });
