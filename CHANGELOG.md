@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/jafpsjs/password/compare/v1.0.0...v1.0.1) (2025-11-18)
+
+
+### Bug Fixes
+
+* Update Uint8Array type ([d26360f](https://github.com/jafpsjs/password/commit/d26360f90f93367ae934715cc64c348f7820b4df))
+
 ## 1.0.0 (2025-11-18)
 
 

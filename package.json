@@ -1,6 +1,6 @@
 {
   "name": "@jafps/password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Functions for hashing and verifying password.",
   "type": "module",
   "scripts": {
