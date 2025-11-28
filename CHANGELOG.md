@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/jafpsjs/password/compare/v1.0.1...v1.0.2) (2025-11-28)
+
+
+### Bug Fixes
+
+* Migrate to pnpm ([2f360ac](https://github.com/jafpsjs/password/commit/2f360ac32b29140de7c2a03aa07027d5965f9faa))
+
 ## [1.0.1](https://github.com/jafpsjs/password/compare/v1.0.0...v1.0.1) (2025-11-18)
 
 
