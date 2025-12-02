@@ -62,7 +62,7 @@ export type HashPasswordOptions = {
  * @returns he generated hash, settings, salt, version and algorithm will be stored.
  * @see https://libsodium.gitbook.io/doc/password_hashing/default_phf#password-storage
  */
-export async function hashPassword(password: string, opts: HashPasswordOptions = {}): Promise<Uint8Array> {
+export async function hashPassword(password: string, opts: HashPasswordOptions = {}): Promise<Uint8Array<ArrayBuffer>> {
   return await new Promise((resolve, reject) => {
     const outputBuffer = Buffer.alloc(sodium.crypto_pwhash_STRBYTES);
     sodium.crypto_pwhash_str_async(
