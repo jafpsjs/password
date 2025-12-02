@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/jafpsjs/password/compare/v1.0.2...v1.0.3) (2025-12-02)
+
+
+### Bug Fixes
+
+* Update hashPassword typescript type ([d0482db](https://github.com/jafpsjs/password/commit/d0482db807207fc60287803f18f153caeaeea27f))
+
 ## [1.0.2](https://github.com/jafpsjs/password/compare/v1.0.1...v1.0.2) (2025-11-28)
 
 
