@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/jafpsjs/password/compare/v1.0.3...v1.0.4) (2026-03-05)
+
+
+### Bug Fixes
+
+* Update dependencies ([73ed6fd](https://github.com/jafpsjs/password/commit/73ed6fd9ee2d9e3a3b13c93356a4cfedad6e8968))
+
 ## [1.0.3](https://github.com/jafpsjs/password/compare/v1.0.2...v1.0.3) (2025-12-02)
 
 
