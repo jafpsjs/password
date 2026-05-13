@@ -1,5 +1,7 @@
 # @jafps/password
 
+[![NPM Version](https://img.shields.io/npm/v/%40jafps%2Fpassword)](https://www.npmjs.com/package/@jafps/password)
+
 Functions for hashing and verifying password.
 
 ## Usage
